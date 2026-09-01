@@ -40,6 +40,13 @@ type HeroProps = {
   onSecondaryClick?: () => void;
 };
 
+function scrollToCollection(smooth: boolean) {
+  const el = document.getElementById("collection");
+  if (!el) return;
+  const top = el.getBoundingClientRect().top + window.scrollY;
+  window.scrollTo({ top, behavior: smooth ? "smooth" : "auto" });
+}
+
 function ScrollArrow({
   label,
   className,
@@ -57,9 +64,7 @@ function ScrollArrow({
       href="#collection"
       onClick={(e) => {
         e.preventDefault();
-        document
-          .getElementById("collection")
-          ?.scrollIntoView({ behavior: "smooth", block: "start" });
+        scrollToCollection(!reduceMotion);
       }}
       className={cn(
         "group flex h-12 w-12 items-center justify-center transition-opacity duration-hover ease-luxury",
