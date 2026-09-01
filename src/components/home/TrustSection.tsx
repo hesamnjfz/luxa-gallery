@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import Image from "next/image";
 import {
   AnimatePresence,
   motion,
@@ -10,110 +9,12 @@ import {
 import { useTranslations } from "next-intl";
 import { Container, SectionLabel } from "@/components/ui";
 import { ChevronIcon } from "@/components/ui/DirectionalIcon";
-import { Reveal, RevealItem, RevealStagger } from "@/components/motion/Reveal";
 import { cn } from "@/lib/cn";
 import { easeOut } from "@/lib/motion";
 import { focusRingDark } from "@/lib/a11y";
 
-const STEP_KEYS = ["browse", "viewing", "financing", "delivery"] as const;
-const SERVICE_KEYS = ["delivery", "tradein", "financing"] as const;
 const QUOTE_KEYS = ["0", "1", "2", "3"] as const;
 const PARTNER_KEYS = ["0", "1", "2", "3", "4"] as const;
-
-const SERVICE_IMAGES = [
-  "https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?q=80&w=1200&auto=format&fit=crop",
-  "https://images.unsplash.com/photo-1485291571150-772bcfc10da5?q=80&w=1200&auto=format&fit=crop",
-  "https://images.unsplash.com/photo-1617531653332-bd46c24f2068?q=80&w=1200&auto=format&fit=crop",
-] as const;
-
-function ProcessTimeline() {
-  const t = useTranslations("trust.process");
-
-  return (
-    <section id="process" className="border-t border-line bg-canvas py-section lg:py-section-lg">
-      <Container>
-        <div className="grid items-end gap-10 lg:grid-cols-12 lg:gap-16">
-          <Reveal className="lg:col-span-5">
-            <SectionLabel>{t("eyebrow")}</SectionLabel>
-            <h2 className="mt-8 font-display text-3xl font-semibold text-ink sm:text-4xl md:text-5xl">
-              {t("title")}
-            </h2>
-          </Reveal>
-          <Reveal delay={0.08} className="lg:col-span-6 lg:col-start-7">
-            <p className="max-w-md text-base font-medium leading-relaxed text-muted lg:ms-auto lg:text-end">
-              {t("subtitle")}
-            </p>
-          </Reveal>
-        </div>
-
-        <ol className="mt-16 border-t border-line sm:mt-20">
-          {STEP_KEYS.map((key, i) => (
-            <li
-              key={key}
-              className="group grid grid-cols-[auto_1fr] items-baseline gap-x-5 gap-y-2 border-b border-line py-7 sm:gap-x-8 sm:py-9 lg:grid-cols-[6.5rem_minmax(0,0.85fr)_minmax(0,1.15fr)] lg:gap-x-10 lg:py-10"
-            >
-              <span className="font-display text-2xl font-medium tabular-nums tracking-tight text-soft transition-colors duration-hover ease-luxury group-hover:text-ink sm:text-3xl">
-                {String(i + 1).padStart(2, "0")}
-              </span>
-              <h3 className="font-display text-xl font-semibold text-ink sm:text-2xl">
-                {t(`steps.${key}.title`)}
-              </h3>
-              <p className="col-start-2 max-w-md text-sm font-medium leading-relaxed text-muted lg:col-start-3 lg:max-w-none lg:justify-self-end lg:text-end">
-                {t(`steps.${key}.desc`)}
-              </p>
-            </li>
-          ))}
-        </ol>
-      </Container>
-    </section>
-  );
-}
-
-function ConciergeServices() {
-  const t = useTranslations("trust.concierge");
-
-  return (
-    <section id="concierge" className="border-t border-line bg-canvas py-section lg:py-section-lg">
-      <Container>
-        <Reveal className="max-w-2xl">
-          <SectionLabel>{t("eyebrow")}</SectionLabel>
-          <h2 className="mt-8 font-display text-3xl font-semibold text-ink sm:text-4xl md:text-5xl">
-            {t("title")}
-          </h2>
-          <p className="mt-6 text-base font-medium text-muted">{t("subtitle")}</p>
-        </Reveal>
-
-        <RevealStagger className="mt-16 grid gap-6 md:grid-cols-3">
-          {SERVICE_KEYS.map((key, i) => (
-            <RevealItem key={key}>
-              <article className="group relative aspect-[3/4] min-h-[320px] overflow-hidden transition-[transform,box-shadow] duration-hover ease-luxury hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(0,0,0,0.12)] sm:aspect-auto sm:min-h-[360px]">
-                <Image
-                  src={SERVICE_IMAGES[i]}
-                  alt={t(`items.${key}.title`)}
-                  fill
-                  sizes="(max-width: 768px) 100vw, 33vw"
-                  className="object-cover transition-transform duration-reveal ease-luxury group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-deep via-deep/70 to-deep/35" />
-                <div className="relative z-10 flex h-full min-h-[320px] flex-col justify-end p-8 sm:min-h-[360px]">
-                  <p className="font-sans text-label font-semibold uppercase tracking-label text-canvas/60">
-                    {String(i + 1).padStart(2, "0")}
-                  </p>
-                  <h3 className="mt-3 font-display text-2xl font-semibold text-canvas">
-                    {t(`items.${key}.title`)}
-                  </h3>
-                  <p className="mt-3 text-sm font-medium leading-relaxed text-canvas/75">
-                    {t(`items.${key}.desc`)}
-                  </p>
-                </div>
-              </article>
-            </RevealItem>
-          ))}
-        </RevealStagger>
-      </Container>
-    </section>
-  );
-}
 
 function TestimonialsBlock() {
   const t = useTranslations("trust.testimonials");
@@ -272,11 +173,5 @@ function TestimonialsBlock() {
 }
 
 export function TrustSection() {
-  return (
-    <>
-      <ProcessTimeline />
-      <ConciergeServices />
-      <TestimonialsBlock />
-    </>
-  );
+  return <TestimonialsBlock />;
 }

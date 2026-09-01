@@ -12,6 +12,7 @@ import Image from "next/image";
 import { useLocale } from "next-intl";
 import { Button, Container } from "@/components/ui";
 import { DirectionalIcon } from "@/components/ui/DirectionalIcon";
+import { SweepMorphCta } from "@/components/home/SweepMorphCta";
 import { AnimatedCounter } from "@/components/motion/AnimatedCounter";
 import { easeOut } from "@/lib/motion";
 import { focusRing, focusRingDark } from "@/lib/a11y";
@@ -40,8 +41,8 @@ type HeroProps = {
   onSecondaryClick?: () => void;
 };
 
-function scrollToCollection(smooth: boolean) {
-  const el = document.getElementById("collection");
+function scrollToFeatured(smooth: boolean) {
+  const el = document.getElementById("featured");
   if (!el) return;
   const top = el.getBoundingClientRect().top + window.scrollY;
   window.scrollTo({ top, behavior: smooth ? "smooth" : "auto" });
@@ -61,10 +62,10 @@ function ScrollArrow({
 }) {
   return (
     <motion.a
-      href="#collection"
+      href="#featured"
       onClick={(e) => {
         e.preventDefault();
-        scrollToCollection(!reduceMotion);
+        scrollToFeatured(!reduceMotion);
       }}
       className={cn(
         "group flex h-12 w-12 items-center justify-center transition-opacity duration-hover ease-luxury",
@@ -99,68 +100,6 @@ function ScrollArrow({
         />
       </motion.span>
     </motion.a>
-  );
-}
-
-/** Uiverse sweep CTA — black/white; sweep 500ms, label→icon 1s, then navigates */
-function MobileCollectionCta({
-  label,
-  onClick,
-  reduceMotion,
-  isRtl,
-}: {
-  label: string;
-  onClick?: () => void;
-  reduceMotion: boolean | null;
-  isRtl: boolean;
-}) {
-  const [active, setActive] = useState(false);
-  const navigating = useRef(false);
-
-  const handleClick = () => {
-    if (navigating.current || !onClick) return;
-    navigating.current = true;
-    setActive(true);
-
-    const delay = reduceMotion ? 0 : 1500;
-    window.setTimeout(() => {
-      onClick();
-    }, delay);
-  };
-
-  return (
-    <motion.button
-      type="button"
-      onClick={handleClick}
-      disabled={active}
-      initial={reduceMotion ? false : { opacity: 0, y: 18 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.9, delay: 0.32, ease: easeOut }}
-      className={cn(
-        "luxa-sweep-btn luxa-mobile-collection-cta min-h-12 min-w-[13.5rem] shrink-0 items-center justify-center px-[2.4em] py-[0.7em] [--luxa-sweep-bg:#ffffff]",
-        focusRing,
-        active && "is-active",
-      )}
-    >
-      <span className="luxa-sweep-btn__frame" aria-hidden />
-      <span className="luxa-mobile-collection-cta__content">
-        <span
-          className={cn(
-            "luxa-mobile-collection-cta__label",
-            isRtl ? "tracking-normal" : "uppercase tracking-[0.14em]",
-          )}
-        >
-          {label}
-        </span>
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
-          src="/icons/mobile-collection-cta.png"
-          alt=""
-          className="luxa-mobile-collection-cta__icon"
-          aria-hidden
-        />
-      </span>
-    </motion.button>
   );
 }
 
@@ -284,10 +223,9 @@ export function Hero({
             </div>
 
             <div className="mt-12 flex w-full justify-center">
-              <MobileCollectionCta
+              <SweepMorphCta
                 label={copy.primary}
                 onClick={onPrimaryClick}
-                reduceMotion={reduceMotion}
                 isRtl={isRtl}
               />
             </div>

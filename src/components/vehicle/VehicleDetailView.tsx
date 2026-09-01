@@ -5,6 +5,7 @@ import { Container, SectionLabel } from "@/components/ui";
 import { BackIcon } from "@/components/ui/BackIcon";
 import { HomeIcon } from "@/components/ui/HomeIcon";
 import { SiteHeader } from "@/components/home/SiteHeader";
+import { siteNavLinks } from "@/components/home/nav-links";
 import { Link } from "@/i18n/navigation";
 import { focusRingDark } from "@/lib/a11y";
 import { cn } from "@/lib/cn";
@@ -29,12 +30,7 @@ export function VehicleDetailView({
   const tInv = useTranslations("inventory");
   const tMeta = useTranslations("meta");
 
-  const navLinks = [
-    { label: tNav("collection"), href: "/collection" },
-    { label: tNav("concierge"), href: "/#concierge" },
-    { label: tNav("about"), href: "/#about" },
-    { label: tNav("contact"), href: "/contact" },
-  ];
+  const navLinks = siteNavLinks(tNav);
 
   const headerIconBtn = cn(
     "inline-flex h-11 w-11 items-center justify-center rounded-full bg-ink text-canvas shadow-[0_4px_18px_rgba(0,0,0,0.22)] transition-all duration-hover ease-luxury hover:bg-deep",

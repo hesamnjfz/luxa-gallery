@@ -6,6 +6,7 @@ import { useLocale, useTranslations } from "next-intl";
 import { Button, Container } from "@/components/ui";
 import { BackIcon } from "@/components/ui/BackIcon";
 import { SiteHeader } from "@/components/home/SiteHeader";
+import { siteNavLinks } from "@/components/home/nav-links";
 import { Link, useRouter } from "@/i18n/navigation";
 import { focusRingDark } from "@/lib/a11y";
 import { cn } from "@/lib/cn";
@@ -71,12 +72,7 @@ export function CollectionView() {
   const shown = results.slice(0, visible);
   const hasMore = visible < results.length;
 
-  const navLinks = [
-    { label: tNav("collection"), href: "/collection" },
-    { label: tNav("concierge"), href: "/#concierge" },
-    { label: tNav("about"), href: "/#about" },
-    { label: tNav("contact"), href: "/contact" },
-  ];
+  const navLinks = siteNavLinks(tNav);
 
   const reset = () => {
     setFiltersState(defaultFilters());

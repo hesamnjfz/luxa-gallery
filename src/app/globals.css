@@ -334,6 +334,13 @@ html[lang="fa"] .font-display {
   color: #ffffff;
 }
 
+@media (max-width: 1023px) {
+  .luxa-sweep-btn--card.is-active,
+  .luxa-sweep-btn--card.is-active .luxa-sweep-btn__frame::before {
+    transition-duration: 1s;
+  }
+}
+
 .luxa-sweep-btn:active .luxa-sweep-btn__frame::before,
 .luxa-sweep-btn.is-active:active .luxa-sweep-btn__frame::before {
   background: #0a0a0a;
@@ -451,6 +458,11 @@ html[lang="fa"] .font-display {
 .luxa-mobile-nav-icon--collection {
   width: 38px;
   height: 38px;
+}
+
+.luxa-mobile-nav-icon--featured {
+  width: 36px;
+  height: 36px;
 }
 
 a:hover .luxa-mobile-nav-icon {
@@ -831,6 +843,11 @@ a:hover .luxa-mobile-nav-icon {
 .luxa-nav-icon-link[data-nav="collection"] .luxa-nav-icon-link__img {
   width: 38px;
   height: 38px;
+}
+
+.luxa-nav-icon-link[data-nav="featured"] .luxa-nav-icon-link__img {
+  width: 36px;
+  height: 36px;
 }
 
 .luxa-nav-icon-link__filled {

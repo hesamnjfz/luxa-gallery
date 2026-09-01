@@ -1,5 +1,6 @@
 "use client";
 
+import { Link } from "@/i18n/navigation";
 import { NavIcon, navIconKey } from "@/components/home/nav-icons";
 
 type NavIconLinkProps = {
@@ -12,7 +13,7 @@ export function NavIconLink({ label, href }: NavIconLinkProps) {
 
   return (
     <>
-      <a
+      <Link
         href={href}
         className="luxa-nav-icon-link"
         aria-label={label}
@@ -20,7 +21,7 @@ export function NavIconLink({ label, href }: NavIconLinkProps) {
       >
         <span className="luxa-nav-icon-link__filled" aria-hidden />
         <NavIcon name={icon} />
-      </a>
+      </Link>
       <div className="luxa-nav-icon-item__tooltip">{label}</div>
     </>
   );

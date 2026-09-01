@@ -9,6 +9,7 @@
   },
   "nav": {
     "collection": "Collection",
+    "featured": "Featured",
     "financing": "Financing",
     "concierge": "Concierge",
     "about": "About",
@@ -26,7 +27,7 @@
     "subtitle": "A private marketplace for exceptional automobiles — curated for collectors.",
     "primary": "Explore The Collection",
     "secondary": "Book a Private Viewing",
-    "scroll": "Browse collection",
+    "scroll": "See featured vehicles",
     "stats": {
       "vehicles": {
         "value": "120+",
@@ -46,6 +47,8 @@
     "label": "Inventory",
     "title": "Featured Vehicles",
     "subtitle": "A selection of exceptional automobiles currently available.",
+    "ctaFeatured": "Available featured cars",
+    "weeklyLabel": "Gallery featured picks",
     "viewAll": "View all cars",
     "viewDetails": "View details",
     "cars": {
@@ -69,6 +72,34 @@
         "price": "$96,200",
         "meta": "3.0L Twin-Turbo · xDrive",
         "tag": "New"
+      }
+    }
+  },
+  "aboutPage": {
+    "eyebrow": "About",
+    "title": "The maison",
+    "subtitle": "How we work, the concierge standard, and the principles behind Luxa Gallery."
+  },
+  "conciergePage": {
+    "heroLead": "Private desk",
+    "heroTitle": "Concierge",
+    "heroSubtitle": "A dedicated atelier for private viewings, appraisal, financing, and sealed delivery — handled in confidence.",
+    "cta": "Speak with the desk",
+    "ctaSecondary": "The services",
+    "pillarsLabel": "The standard",
+    "pillarsTitle": "How the desk works",
+    "pillars": {
+      "0": {
+        "title": "Discreet",
+        "desc": "Every conversation stays private. Appointments are by invitation and name, never a showroom floor."
+      },
+      "1": {
+        "title": "Within 24 hours",
+        "desc": "The desk replies personally — with a viewing plan, valuation path, or financing outline."
+      },
+      "2": {
+        "title": "Worldwide",
+        "desc": "Enclosed transport and ceremonial handover, wherever the collection is meant to arrive."
       }
     }
   },

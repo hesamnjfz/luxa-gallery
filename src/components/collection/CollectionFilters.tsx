@@ -14,6 +14,26 @@ import {
 } from "@/data/vehicles";
 import { cn } from "@/lib/cn";
 
+function ResultCount({ count }: { count: number }) {
+  const t = useTranslations("inventory");
+
+  return (
+    <p className="flex items-center gap-2 font-sans text-sm font-semibold text-muted">
+      <span>{count}</span>
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img
+        src="/icons/result-car.png"
+        alt=""
+        width={20}
+        height={20}
+        aria-hidden
+        className="h-5 w-5 object-contain"
+      />
+      <span className="sr-only">{t("results", { count })}</span>
+    </p>
+  );
+}
+
 type CollectionFiltersProps = {
   filters: VehicleFilters;
   sort: VehicleSort;
@@ -85,9 +105,7 @@ export function CollectionFilters({
         )}
       >
         <div className="flex flex-wrap items-end justify-between gap-4">
-          <p className="font-sans text-sm font-semibold text-muted">
-            {t("results", { count: resultCount })}
-          </p>
+          <ResultCount count={resultCount} />
           <button
             type="button"
             onClick={onReset}
@@ -199,9 +217,7 @@ export function MobileFilterTrigger({
 
   return (
     <div className="flex items-center justify-between gap-4 border-b border-line py-4 lg:hidden">
-      <p className="font-sans text-sm font-semibold text-muted">
-        {t("results", { count: resultCount })}
-      </p>
+      <ResultCount count={resultCount} />
       <Button type="button" variant="primary" size="sm" onClick={onOpen}>
         {t("filters.open")}
       </Button>

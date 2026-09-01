@@ -228,7 +228,7 @@ export function SiteHeader({ links, headerActions }: SiteHeaderProps) {
                       ease,
                     }}
                   >
-                    <a
+                    <Link
                       href={link.href}
                       onClick={() => setMenuOpen(false)}
                       className={cn(
@@ -243,9 +243,11 @@ export function SiteHeader({ links, headerActions }: SiteHeaderProps) {
                           "luxa-mobile-nav-icon",
                           navIconKey(link.href) === "collection" &&
                             "luxa-mobile-nav-icon--collection",
+                          navIconKey(link.href) === "featured" &&
+                            "luxa-mobile-nav-icon--featured",
                         )}
                       />
-                    </a>
+                    </Link>
                   </motion.li>
                 ))}
               </ul>

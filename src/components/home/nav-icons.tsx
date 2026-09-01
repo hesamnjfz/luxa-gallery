@@ -6,6 +6,7 @@ const svgProps = {
 
 export function navIconKey(href: string) {
   const h = href.toLowerCase();
+  if (h.includes("featured")) return "featured";
   if (h.includes("collection")) return "collection";
   if (h.includes("financing")) return "financing";
   if (h.includes("concierge")) return "concierge";
@@ -25,6 +26,16 @@ export function NavIcon({ name, imgClassName, svgClassName }: NavIconProps) {
   const svgClass = svgClassName ?? "luxa-nav-icon-link__svg";
 
   switch (name) {
+    case "featured":
+      return (
+        // eslint-disable-next-line @next/next/no-img-element
+        <img
+          src="/icons/nav-featured-bolt.png"
+          alt=""
+          className={imgClass}
+          aria-hidden
+        />
+      );
     case "collection":
       return (
         // eslint-disable-next-line @next/next/no-img-element

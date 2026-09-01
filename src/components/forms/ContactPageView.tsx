@@ -1,44 +1,46 @@
 "use client";
 
 import { useTranslations } from "next-intl";
-import { Container, SectionLabel } from "@/components/ui";
+import { Container } from "@/components/ui";
+import { HomeIcon } from "@/components/ui/HomeIcon";
 import { SiteHeader } from "@/components/home/SiteHeader";
+import { siteNavLinks } from "@/components/home/nav-links";
 import { ContactForm } from "@/components/forms/ContactForm";
 import { Reveal } from "@/components/motion/Reveal";
+import { Link } from "@/i18n/navigation";
+import { focusRingDark } from "@/lib/a11y";
+import { cn } from "@/lib/cn";
 
 export function ContactPageView() {
   const t = useTranslations("forms.contactPage");
   const tNav = useTranslations("nav");
+  const tMeta = useTranslations("meta");
 
-  const navLinks = [
-    { label: tNav("collection"), href: "/collection" },
-    { label: tNav("concierge"), href: "/#concierge" },
-    { label: tNav("about"), href: "/#about" },
-    { label: tNav("contact"), href: "/contact" },
-  ];
+  const navLinks = siteNavLinks(tNav);
+
+  const headerActions = (
+    <Link
+      href="/"
+      aria-label={tMeta("home")}
+      className={cn(
+        "inline-flex h-11 w-11 items-center justify-center rounded-full bg-ink text-canvas shadow-[0_4px_18px_rgba(0,0,0,0.22)] transition-all duration-hover ease-luxury hover:bg-deep",
+        focusRingDark,
+      )}
+    >
+      <HomeIcon />
+    </Link>
+  );
 
   return (
     <div className="min-h-screen bg-canvas text-ink">
-      <SiteHeader links={navLinks} />
+      <SiteHeader links={navLinks} headerActions={headerActions} />
 
-      <div className="border-b border-line bg-deep pt-28 pb-16 text-canvas sm:pt-32 sm:pb-20">
-        <Container>
-          <SectionLabel className="text-canvas/70">{t("eyebrow")}</SectionLabel>
-          <h1 className="mt-6 max-w-3xl font-display text-4xl font-semibold text-canvas sm:text-5xl md:text-6xl">
-            {t("title")}
-          </h1>
-          <p className="mt-6 max-w-xl text-base font-medium text-canvas/70 sm:text-lg">
-            {t("subtitle")}
-          </p>
-        </Container>
-      </div>
-
-      <Container className="py-section">
+      <Container className="pt-28 pb-section sm:pt-32">
         <div className="grid items-start gap-12 lg:grid-cols-2 lg:gap-16">
           <Reveal>
-            <h2 className="font-display text-2xl font-semibold text-ink sm:text-3xl">
+            <h1 className="font-display text-2xl font-semibold text-ink sm:text-3xl">
               {t("formTitle")}
-            </h2>
+            </h1>
             <p className="mt-3 text-sm font-medium text-muted">{t("formLead")}</p>
             <div className="mt-10">
               <ContactForm />
@@ -47,18 +49,7 @@ export function ContactPageView() {
 
           <Reveal delay={0.1} className="space-y-6">
             <aside className="border border-line bg-surface p-8">
-              <p className="font-sans text-label font-semibold uppercase tracking-label text-soft">
-                {t("infoLabel")}
-              </p>
-              <dl className="mt-8 space-y-6">
-                <div>
-                  <dt className="font-sans text-label font-semibold uppercase tracking-label text-soft">
-                    {t("addressLabel")}
-                  </dt>
-                  <dd className="mt-2 whitespace-pre-line text-sm font-medium leading-relaxed text-ink">
-                    {t("address")}
-                  </dd>
-                </div>
+              <dl className="space-y-6">
                 <div>
                   <dt className="font-sans text-label font-semibold uppercase tracking-label text-soft">
                     {t("phoneLabel")}
@@ -83,14 +74,6 @@ export function ContactPageView() {
                     >
                       {t("email")}
                     </a>
-                  </dd>
-                </div>
-                <div>
-                  <dt className="font-sans text-label font-semibold uppercase tracking-label text-soft">
-                    {t("hoursLabel")}
-                  </dt>
-                  <dd className="mt-2 whitespace-pre-line text-sm font-medium leading-relaxed text-ink">
-                    {t("hours")}
                   </dd>
                 </div>
               </dl>

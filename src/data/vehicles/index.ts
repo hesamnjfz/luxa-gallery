@@ -116,6 +116,18 @@ export function formatMileage(value: number, locale = "en"): string {
   return `${new Intl.NumberFormat(locale === "fa" ? "fa-IR" : "en-US").format(value)} mi`;
 }
 
+export function featuredVehicles(vehicles: Vehicle[]) {
+  return vehicles.filter((v) => v.featured);
+}
+
+/** Highest-demand featured cars for the weekly editorial strip. */
+export function weeklyPicks(vehicles: Vehicle[], limit = 3) {
+  return [...vehicles]
+    .filter((v) => v.featured)
+    .sort((a, b) => b.popularity - a.popularity)
+    .slice(0, limit);
+}
+
 export {
   MOCK_VEHICLES,
   VEHICLE_BRANDS,
