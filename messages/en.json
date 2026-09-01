@@ -1,0 +1,382 @@
+{
+  "meta": {
+    "brand": "Luxa Gallery",
+    "precision": "Designed with precision",
+    "home": "Home"
+  },
+  "motion": {
+    "view": "View"
+  },
+  "nav": {
+    "collection": "Collection",
+    "financing": "Financing",
+    "concierge": "Concierge",
+    "about": "About",
+    "contact": "Contact",
+    "cta": "Book a Viewing",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "language": "Language",
+    "primaryNav": "Primary"
+  },
+  "hero": {
+    "badge": "Curated Collection",
+    "title": "Luxa",
+    "titleAccent": "Gallery",
+    "subtitle": "A private marketplace for exceptional automobiles — curated for collectors.",
+    "primary": "Explore The Collection",
+    "secondary": "Book a Private Viewing",
+    "scroll": "Browse collection",
+    "stats": {
+      "vehicles": {
+        "value": "120+",
+        "label": "Vehicles Curated"
+      },
+      "years": {
+        "value": "15",
+        "label": "Years of Trust"
+      },
+      "continents": {
+        "value": "3",
+        "label": "Continents"
+      }
+    }
+  },
+  "collection": {
+    "label": "Inventory",
+    "title": "Featured Vehicles",
+    "subtitle": "A selection of exceptional automobiles currently available.",
+    "viewAll": "View all cars",
+    "viewDetails": "View details",
+    "cars": {
+      "0": {
+        "name": "Porsche 911 Carrera S",
+        "year": "2024",
+        "price": "$148,500",
+        "meta": "3.0L Twin-Turbo · 8-Speed PDK",
+        "tag": "New"
+      },
+      "1": {
+        "name": "Mercedes-AMG GT 63",
+        "year": "2023",
+        "price": "$172,900",
+        "meta": "4.0L V8 Biturbo · Performance Pack",
+        "tag": "Certified"
+      },
+      "2": {
+        "name": "BMW M4 Competition",
+        "year": "2024",
+        "price": "$96,200",
+        "meta": "3.0L Twin-Turbo · xDrive",
+        "tag": "New"
+      }
+    }
+  },
+  "features": {
+    "label": "The Standard",
+    "title": "Crafted for the modern collector",
+    "subtitle": "Every detail refined. Every interaction intentional.",
+    "items": {
+      "verified": {
+        "title": "Verified Listings",
+        "desc": "Every vehicle undergoes multi-point authentication before appearing in the marketplace."
+      },
+      "seamless": {
+        "title": "Seamless Transactions",
+        "desc": "Secure escrow, transparent history and concierge support from inquiry to delivery."
+      },
+      "curated": {
+        "title": "Curated Experience",
+        "desc": "Intelligent matching, private viewings and an interface as refined as the cars themselves."
+      }
+    }
+  },
+  "process": {
+    "label": "Concierge",
+    "title": "How it works",
+    "steps": {
+      "0": {
+        "num": "01",
+        "title": "Browse or List",
+        "desc": "Explore curated inventory or submit your vehicle with guided photography and documentation."
+      },
+      "1": {
+        "num": "02",
+        "title": "Connect Securely",
+        "desc": "Chat with verified parties, schedule private inspections and review full vehicle history."
+      },
+      "2": {
+        "num": "03",
+        "title": "Close with Confidence",
+        "desc": "Complete the transaction through protected payment and optional delivery logistics."
+      }
+    }
+  },
+  "trust": {
+    "process": {
+      "eyebrow": "The process",
+      "title": "How it works",
+      "subtitle": "Four unhurried steps — from first viewing to a sealed handover.",
+      "steps": {
+        "browse": {
+          "title": "Browse the Collection",
+          "desc": "Explore a privately curated inventory of exceptional automobiles."
+        },
+        "viewing": {
+          "title": "Schedule a Private Viewing",
+          "desc": "Meet our concierge for a tailored, appointment-only inspection."
+        },
+        "financing": {
+          "title": "Personalized Financing",
+          "desc": "Structure ownership with bespoke terms aligned to your portfolio."
+        },
+        "delivery": {
+          "title": "White-Glove Delivery",
+          "desc": "Receive your vehicle with sealed transport and ceremonial handover."
+        }
+      }
+    },
+    "concierge": {
+      "eyebrow": "Concierge Services",
+      "title": "Beyond the transaction",
+      "subtitle": "Dedicated specialists for every chapter of acquisition and ownership.",
+      "items": {
+        "delivery": {
+          "title": "White-Glove Delivery",
+          "desc": "Enclosed transport, climate-aware logistics, and on-site presentation worldwide."
+        },
+        "tradein": {
+          "title": "Trade-In Appraisal",
+          "desc": "Confidential valuation of your current vehicle by marque specialists."
+        },
+        "financing": {
+          "title": "Bespoke Financing",
+          "desc": "Private lending partnerships structured for collectors and estates."
+        }
+      }
+    },
+    "testimonials": {
+      "eyebrow": "Client Voices",
+      "title": "Trusted in confidence",
+      "prev": "Previous quote",
+      "next": "Next quote",
+      "dot": "Go to quote {n}",
+      "partners": "As featured in / trusted partners",
+      "quotes": {
+        "0": {
+          "text": "The viewing felt like a private salon — unhurried, exacting, and entirely discreet.",
+          "name": "Alexander Rowe",
+          "role": "Collector, Geneva"
+        },
+        "1": {
+          "text": "From appraisal to delivery, every detail was handled with the care of a maison atelier.",
+          "name": "Nadia Farhadi",
+          "role": "Entrepreneur, Dubai"
+        },
+        "2": {
+          "text": "Financing was arranged privately overnight. I never felt like I was buying a car — I was acquiring a piece.",
+          "name": "Marcus Chen",
+          "role": "Family Office, Singapore"
+        },
+        "3": {
+          "text": "White-glove delivery arrived sealed and documented. The standard is genuinely rare.",
+          "name": "Elena Varga",
+          "role": "Architect, Milan"
+        }
+      },
+      "logos": {
+        "0": "Robb Report",
+        "1": "Monocle",
+        "2": "Financial Times",
+        "3": "Wallpaper*",
+        "4": "DuPont Registry"
+      }
+    }
+  },
+  "cta": {
+    "label": "Private Access",
+    "title": "Ready to elevate your garage?",
+    "subtitle": "Join thousands of collectors and enthusiasts who trust Luxa for every transaction.",
+    "primary": "Start Selling",
+    "secondary": "Browse Inventory"
+  },
+  "footer": {
+    "tagline": "The refined marketplace for exceptional automobiles.",
+    "rights": "© 2026 Luxa. All rights reserved.",
+    "product": "Product",
+    "company": "Company",
+    "legal": "Legal",
+    "cars": "Browse Cars",
+    "sell": "Sell a Car",
+    "pricing": "Pricing",
+    "about": "About Us",
+    "careers": "Careers",
+    "contact": "Contact",
+    "getInTouch": "Get in touch",
+    "privacy": "Privacy",
+    "terms": "Terms"
+  },
+  "forms": {
+    "fields": {
+      "name": "Full name",
+      "email": "Email address",
+      "phone": "Phone number",
+      "preferredAt": "Preferred date & time",
+      "message": "Message",
+      "messageOptional": "Message (optional)",
+      "vehicleType": "Interested vehicle type",
+      "vehicleTypePlaceholder": "Select a type"
+    },
+    "vehicleTypes": {
+      "coupe": "Coupe",
+      "sedan": "Sedan",
+      "suv": "SUV",
+      "convertible": "Convertible",
+      "other": "Other / Not sure"
+    },
+    "validation": {
+      "nameRequired": "Please enter your full name.",
+      "emailRequired": "Email is required.",
+      "emailInvalid": "Enter a valid email address.",
+      "phoneRequired": "Phone number is required.",
+      "phoneInvalid": "Enter a valid phone number.",
+      "dateRequired": "Choose a preferred date and time.",
+      "vehicleRequired": "Please select a vehicle type.",
+      "messageRequired": "Please share a short message (at least 10 characters)."
+    },
+    "inquiry": {
+      "eyebrow": "Private Access",
+      "title": "Request a Private Viewing",
+      "forVehicle": "Regarding {vehicle}",
+      "close": "Close",
+      "stepOf": "Step {current} of {total}",
+      "step1Lead": "Tell us how to reach you — our concierge responds within 24 hours.",
+      "step2Lead": "Share your preferred time and any notes for the appointment.",
+      "continue": "Continue",
+      "back": "Back",
+      "submit": "Confirm request",
+      "successTitle": "Request received",
+      "successBody": "Our concierge will contact you within 24 hours to confirm your private viewing.",
+      "done": "Done"
+    },
+    "contact": {
+      "submit": "Send message",
+      "sending": "Sending…",
+      "successTitle": "Message received",
+      "successBody": "Our concierge will contact you within 24 hours.",
+      "sendAnother": "Send another message"
+    },
+    "contactPage": {
+      "eyebrow": "Concierge",
+      "title": "Contact the maison",
+      "subtitle": "A discreet line to our specialists — acquisitions, viewings, and ownership services.",
+      "formTitle": "Write to us",
+      "formLead": "Every inquiry is handled privately by our concierge desk.",
+      "infoLabel": "Atelier details",
+      "addressLabel": "Address",
+      "address": "88 Belgrave Square\nLondon SW1X 8NP\nUnited Kingdom",
+      "phoneLabel": "Phone",
+      "phone": "09928781780",
+      "emailLabel": "Email",
+      "email": "vcybertechnology@gmail.com",
+      "hoursLabel": "Hours",
+      "hours": "Mon–Sat · 10:00–19:00\nSunday by appointment",
+      "mapLabel": "Map",
+      "mapHint": "Map placeholder — live embed coming soon"
+    }
+  },
+  "inventory": {
+    "eyebrow": "Private Inventory",
+    "title": "Available Collection Vehicles",
+    "subtitle": "Browse a curated selection of exceptional automobiles, refined for collectors who value discretion and provenance.",
+    "back": "Go back",
+    "featured": "Featured",
+    "viewDetails": "View Details",
+    "loadMore": "Load More",
+    "results": "{count} vehicles",
+    "reset": "Reset filters",
+    "emptyTitle": "No vehicles match",
+    "emptyBody": "Adjust your filters to rediscover available automobiles in the collection.",
+    "backToCollection": "Back to collection",
+    "mileage": "Mileage",
+    "transmission": "Transmission",
+    "filters": {
+      "brand": "Brand",
+      "bodyType": "Body Type",
+      "year": "Year",
+      "price": "Price Range",
+      "all": "All",
+      "open": "Filters",
+      "close": "Close",
+      "apply": "Show results",
+      "minPrice": "Minimum price",
+      "maxPrice": "Maximum price",
+      "panel": "Filter vehicles"
+    },
+    "loading": "Loading vehicles",
+    "resultsHeading": "Available vehicles",
+    "sort": {
+      "label": "Sort by",
+      "priceDesc": "Price: High to Low",
+      "priceAsc": "Price: Low to High",
+      "newest": "Newest",
+      "popular": "Most Popular"
+    }
+  },
+  "vehicleDetail": {
+    "metaFallback": "Private viewing available for this exceptional automobile.",
+    "startingFrom": "Starting from",
+    "gallery": {
+      "openLightbox": "Open fullscreen gallery",
+      "expand": "Fullscreen",
+      "lightbox": "Image gallery",
+      "close": "Close",
+      "prev": "Previous image",
+      "next": "Next image",
+      "thumb": "View image {n}"
+    },
+    "specs": {
+      "year": "Year",
+      "mileage": "Mileage",
+      "engine": "Engine",
+      "horsepower": "Horsepower",
+      "transmission": "Transmission",
+      "drivetrain": "Drivetrain",
+      "exterior": "Exterior Color",
+      "interior": "Interior Color",
+      "vin": "VIN"
+    },
+    "inquiry": {
+      "label": "Private Inquiry",
+      "lead": "Arrange a discreet appointment with our concierge team.",
+      "request": "Request Private Viewing",
+      "call": "Call Concierge",
+      "phone": "09928781780"
+    },
+    "badges": {
+      "certified": "Certified Pre-Owned",
+      "delivery": "Nationwide Delivery",
+      "history": "Full Service History"
+    },
+    "description": {
+      "eyebrow": "Provenance",
+      "title": "The narrative behind the machine"
+    },
+    "finance": {
+      "eyebrow": "Ownership",
+      "title": "Financing estimate",
+      "subtitle": "Illustrative monthly payment at {apr}% APR. Final terms confirmed privately.",
+      "down": "Down payment",
+      "term": "Loan term",
+      "months": "{count} months",
+      "monthly": "Estimated monthly",
+      "disclaimer": "Estimate only — rates, taxes, and fees vary. Not a credit offer."
+    },
+    "similar": {
+      "eyebrow": "Continue exploring",
+      "title": "Similar vehicles",
+      "prev": "Scroll previous",
+      "next": "Scroll next"
+    }
+  }
+}
