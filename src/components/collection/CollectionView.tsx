@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { useLocale, useTranslations } from "next-intl";
 import { Button, Container } from "@/components/ui";
@@ -39,6 +39,8 @@ export function CollectionView() {
   const [visible, setVisible] = useState(PAGE_SIZE);
   const [loading, setLoading] = useState(true);
   const [sheetOpen, setSheetOpen] = useState(false);
+  const [loadingMore, setLoadingMore] = useState(false);
+  const loadMoreTimer = useRef<number | null>(null);
 
   const setFilters = (next: VehicleFilters) => {
     setFiltersState(next);
@@ -53,6 +55,12 @@ export function CollectionView() {
   useEffect(() => {
     const timer = window.setTimeout(() => setLoading(false), 900);
     return () => window.clearTimeout(timer);
+  }, []);
+
+  useEffect(() => {
+    return () => {
+      if (loadMoreTimer.current !== null) window.clearTimeout(loadMoreTimer.current);
+    };
   }, []);
 
   useEffect(() => {
@@ -78,6 +86,19 @@ export function CollectionView() {
     setFiltersState(defaultFilters());
     setSortState("popular");
     setVisible(PAGE_SIZE);
+  };
+
+  const onLoadMore = () => {
+    if (loadingMore) return;
+    if (reduceMotion) {
+      setVisible((n) => n + PAGE_SIZE);
+      return;
+    }
+    setLoadingMore(true);
+    loadMoreTimer.current = window.setTimeout(() => {
+      setVisible((n) => n + PAGE_SIZE);
+      setLoadingMore(false);
+    }, 1000);
   };
 
   const headerIconBtn = cn(
@@ -177,7 +198,11 @@ export function CollectionView() {
                   <Button
                     type="button"
                     variant="primary"
-                    onClick={() => setVisible((n) => n + PAGE_SIZE)}
+                    className={cn(
+                      "luxa-sweep-btn--hold",
+                      loadingMore && "is-active",
+                    )}
+                    onClick={onLoadMore}
                   >
                     {t("loadMore")}
                   </Button>

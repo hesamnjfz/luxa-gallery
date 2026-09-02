@@ -334,6 +334,11 @@ html[lang="fa"] .font-display {
   color: #ffffff;
 }
 
+.luxa-sweep-btn--hold.is-active,
+.luxa-sweep-btn--hold.is-active .luxa-sweep-btn__frame::before {
+  transition-duration: 1s;
+}
+
 @media (max-width: 1023px) {
   .luxa-sweep-btn--card.is-active,
   .luxa-sweep-btn--card.is-active .luxa-sweep-btn__frame::before {

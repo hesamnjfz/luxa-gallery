@@ -1,5 +1,7 @@
 "use client";
 
+import { useEffect, useRef, useState, type MouseEvent } from "react";
+import { useReducedMotion } from "framer-motion";
 import { useTranslations } from "next-intl";
 import { Container } from "@/components/ui";
 import { BackIcon } from "@/components/ui/BackIcon";
@@ -13,13 +15,34 @@ import { Link, useRouter } from "@/i18n/navigation";
 import { focusRingDark } from "@/lib/a11y";
 import { cn } from "@/lib/cn";
 
+const SWEEP_MS = 1000;
+
 export function FeaturedPageView() {
   const tNav = useTranslations("nav");
   const t = useTranslations("collection");
   const tInv = useTranslations("inventory");
   const tMeta = useTranslations("meta");
   const router = useRouter();
+  const reduceMotion = useReducedMotion();
   const vehicles = featuredVehicles(MOCK_VEHICLES);
+  const [sweeping, setSweeping] = useState(false);
+  const sweepTimer = useRef<number | null>(null);
+
+  useEffect(() => {
+    return () => {
+      if (sweepTimer.current !== null) window.clearTimeout(sweepTimer.current);
+    };
+  }, []);
+
+  const onViewAll = (e: MouseEvent<HTMLAnchorElement>) => {
+    if (reduceMotion) return;
+    e.preventDefault();
+    if (sweeping) return;
+    setSweeping(true);
+    sweepTimer.current = window.setTimeout(() => {
+      router.push("/collection");
+    }, SWEEP_MS);
+  };
 
   const headerActions = (
     <button
@@ -68,9 +91,11 @@ export function FeaturedPageView() {
         <Reveal className="mb-10 flex justify-end">
           <Link
             href="/collection"
+            onClick={onViewAll}
             className={cn(
-              "luxa-sweep-btn inline-flex min-h-12 shrink-0 items-center justify-center px-[2.4em] py-[0.7em]",
+              "luxa-sweep-btn luxa-sweep-btn--hold inline-flex min-h-12 shrink-0 items-center justify-center px-[2.4em] py-[0.7em]",
               "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ink/35 focus-visible:ring-offset-2 focus-visible:ring-offset-canvas",
+              sweeping && "is-active",
             )}
           >
             <span className="luxa-sweep-btn__frame" aria-hidden />
