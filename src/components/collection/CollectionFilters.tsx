@@ -24,10 +24,10 @@ function ResultCount({ count }: { count: number }) {
       <img
         src="/icons/result-car.png"
         alt=""
-        width={20}
-        height={20}
+        width={32}
+        height={32}
         aria-hidden
-        className="h-5 w-5 object-contain"
+        className="h-8 w-8 object-contain"
       />
       <span className="sr-only">{t("results", { count })}</span>
     </p>

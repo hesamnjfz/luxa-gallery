@@ -117,17 +117,12 @@ export function SiteHeader({ links, headerActions }: SiteHeaderProps) {
       >
         <Container
           className={cn(
-            "grid grid-cols-[auto_1fr_auto] items-center gap-4 transition-[height] duration-300 ease-out lg:grid-cols-[1fr_auto_1fr]",
+            "relative transition-[height] duration-300 ease-out",
             scrolled ? "h-16" : "h-[4.5rem]",
           )}
         >
-          <div className="pointer-events-auto flex items-center gap-2 justify-self-start sm:gap-3">
-            {headerActions && (
-              <div className="flex items-center gap-2 lg:hidden">{headerActions}</div>
-            )}
-            {headerActions && (
-              <div className="hidden items-center gap-2 lg:flex">{headerActions}</div>
-            )}
+          <div className="pointer-events-auto absolute inset-y-0 start-[7px] z-[61] flex items-center gap-2 sm:start-8 sm:gap-3 lg:start-16 [&_a]:ring-1 [&_a]:ring-black/15 [&_button]:ring-1 [&_button]:ring-black/15">
+            {headerActions}
             <Link
               href="/"
               className={cn(
@@ -141,7 +136,7 @@ export function SiteHeader({ links, headerActions }: SiteHeaderProps) {
           </div>
 
           <nav
-            className="pointer-events-auto hidden justify-self-center lg:block"
+            className="pointer-events-auto hidden h-full items-center justify-center lg:flex"
             aria-label={t("primaryNav")}
           >
             <ul className="luxa-nav-rail">
@@ -153,7 +148,7 @@ export function SiteHeader({ links, headerActions }: SiteHeaderProps) {
             </ul>
           </nav>
 
-          <div className="pointer-events-auto flex items-center justify-self-end gap-2 sm:gap-3">
+          <div className="pointer-events-auto absolute inset-y-0 end-[7px] z-[61] flex items-center gap-2 sm:end-8 sm:gap-3 lg:end-16">
             <div className="hidden md:block">
               <LanguagePill layoutId="lang-pill-desktop" />
             </div>
